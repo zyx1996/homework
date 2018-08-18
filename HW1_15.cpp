@@ -51,6 +51,7 @@ void multiply(double *result,double *x,int y){
   }
 }
 
+
 void pla(){
   int correctnum=0;
   int index=0;
@@ -60,8 +61,9 @@ void pla(){
     if(trainingset[index].output==sign(multiply(weight,trainingset[index].input)))correctnum++;
     else{//出错，执行修正算法
       double temp[demension];
+      //计算y*x
       multiply(temp,trainingset[index].input,trainingset[index].output);
-      
+      add(weight,temp);
     }
     if(index==n-1)index=0;
     else index++;
