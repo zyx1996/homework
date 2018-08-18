@@ -18,12 +18,14 @@ struct record{
 vector<record> trainingset;
 //把数据读取到训练样本向量
 void getdata(ifstream &datafile){
-  while(!datafile.fail()){
-    for(int i=i;i<demension;i++){
+  while(!datafile.fail()){//判断输入是否成功
+    record currecord;
+    currecord.input[0]=1;
+    for(int i=1;i<demension;i++){
       datafile>>currecord.input[i];
     }
     datafile>>currecord.output[i];
-    trainingset.push_back(currecord);
+    trainingset.push_back(currecord);//将元素添加到矢量末尾
   }
   datafile.close();
   n=trainingset.size();
