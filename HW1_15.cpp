@@ -51,24 +51,38 @@ void multiply(double *result,double *x,int y){
   }
 }
 
-
+void add(double *wt,double *yx)
+{
+  for(int i=0;i<demension;i++)
+  {
+    wt[i]+=yx[i];
+  }
+}
 void pla(){
   int correctnum=0;
-  int index=0;
+  int index=0,step=0;
   bool isfinished=false;
   while(!isfinished)
   {
     if(trainingset[index].output==sign(multiply(weight,trainingset[index].input)))correctnum++;
     else{//出错，执行修正算法
+      //临时数组
       double temp[demension];
       //计算y*x
       multiply(temp,trainingset[index].input,trainingset[index].output);
+      //修正w(t+1)=w(t)+yx
       add(weight,temp);
+      //步数
+      step++;
+      //出错，连续正确数目归零
+      correctnum=0;
+      cout<<"step" << step << ":" << endl << "index=" << index << " is wrong" << endl;
     }
     if(index==n-1)index=0;
     else index++;
     if(correctnum=n)isfinished=true;
   }
+  cout << "total step:" << step << endl;
 }
 
 void main()
