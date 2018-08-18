@@ -59,13 +59,16 @@ void pla(){
   {
     if(trainingset[index].output==sign(multiply(weight,trainingset[index].input)))correctnum++;
     else{//出错，执行修正算法
-      multiply(temp,trainingset.[input],trainingset.[output]);
+      double temp[demension];
+      multiply(temp,trainingset[index].input,trainingset[index].output);
+      
     }
     if(index==n-1)index=0;
     else index++;
     if(correctnum=n)isfinished=true;
   }
 }
+
 void main()
 {
   ifstream datafile(file);//以文件模式打开
