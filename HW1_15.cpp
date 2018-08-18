@@ -102,7 +102,10 @@ void main()
 		exit(1);
 		system("pause");
 	}
-	for (auto x : weight)x = 0;
+	for(int i=0;i<demension;i++)
+	{
+		weight[i]=0;
+	}
 	pla();
 	system("pause");
 }
