@@ -5,7 +5,7 @@
 using namespace std;
 
 string file="E:\\迅雷下载\\hw1_15_train.dat";//读取文件名
-
+int n;//训练样本数
 #define demension 5   //特征维度+x0
 
 double weight[demension];//权重
