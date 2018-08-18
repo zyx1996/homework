@@ -60,9 +60,10 @@ void add(double *wt, double *yx)
 }
 
 int sign(double x){
-	if (x >= 0)return 1;
+	if (x > 0)return 1;
 	else return -1;
 }
+
 void pla() {
 	int correctnum = 0;
 	int index = 0, step = 0;
