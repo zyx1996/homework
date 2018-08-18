@@ -17,11 +17,14 @@ struct record{
 //训练样本向量
 vector<record> trainingset;
 //把数据读取到训练样本向量
-void getdata(ifstream &datafile){
-  while(!datafile.fail()){//判断输入是否成功
+void getdata(ifstream &datafile)
+{
+  while(!datafile.fail())
+  {//判断输入是否成功
     record currecord;
     currecord.input[0]=1;
-    for(int i=1;i<demension;i++){
+    for(int i=1;i<demension;i++)
+    {
       datafile>>currecord.input[i];
     }
     datafile>>currecord.output[i];
