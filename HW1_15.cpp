@@ -45,8 +45,12 @@ void multiply(double *w,double *x)
 }
 //计算y*x
 void multiply(double *result,double *x,int y){
-  
+  for(int i=0;i<demension;i++)
+  {
+    result=y*x[i];
+  }
 }
+
 void pla(){
   int correctnum=0;
   int index=0;
