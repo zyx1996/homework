@@ -33,9 +33,34 @@ void getdata(ifstream &datafile)
   datafile.close();
   n=trainingset.size();
 }
-
-void pla(){
+//计算w*x
+void multiply(double *w,double *x)
+{
+  double w_x=0;
+  for(int i=0;i<demension;i++)
+  {
+    w_x+=w[i]*x[i];
+  }
+  return w_X;
+}
+//计算y*x
+void multiply(double *result,double *x,int y){
   
+}
+void pla(){
+  int correctnum=0;
+  int index=0;
+  bool isfinished=false;
+  while(!isfinished)
+  {
+    if(trainingset[index].output==sign(multiply(weight,trainingset[index].input)))correctnum++;
+    else{//出错，执行修正算法
+      multiply(temp,trainingset.[input],trainingset.[output]);
+    }
+    if(index==n-1)index=0;
+    else index++;
+    if(correctnum=n)isfinished=true;
+  }
 }
 void main()
 {
