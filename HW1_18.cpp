@@ -82,6 +82,11 @@ void pocket_pla(vector<record> &trainingset,double *pocketweight,double *weight,
 			multiply(temp, trainingset[index].input, trainingset[index].output);
 			//修正w(t+1)=w(t)+yx
 			add(weight, temp);
+			if(geterrorRate(weight,trainingset)<geterrorRate(pocket_weight,trainingset)){
+				for(int i;i<denmension;i++){
+					pocket_weight[i]=weight[i];
+				}
+			}
 			//步数
 			step++;
 		}
