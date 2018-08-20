@@ -2,6 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 #define demension 5   //特征维度+x0
@@ -82,7 +83,7 @@ void pocket_pla(vector<record> &trainingset,double *pocketweight,double *weight,
 			multiply(temp, trainingset[index].input, trainingset[index].output);
 			//修正w(t+1)=w(t)+yx
 			add(weight, temp);
-			if(geterrorRate(weight,trainingset)<geterrorRate(pocket_weight,trainingset)){
+			if(geterrorRate(weight,trainingset)<geterrorRate(pocketweight,trainingset)){
 				for(int i;i<denmension;i++){
 					pocket_weight[i]=weight[i];
 				}
