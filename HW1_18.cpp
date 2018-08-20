@@ -72,10 +72,10 @@ double geterrorRate(double *weight,vector<record> &dataset) {
 
 void pocket_pla(vector<record> &trainingset,double *pocketweight,double *weight,int iteration) {
 	int n = trainingset.size();
-	int index = 0, step = 1;
-	while (step<iteration)
+	int index = 0, iter = 1;
+	while (iter<iteration)
 	{
-		if (trainingset[index].output != sign(multiply(weight, trainingset[index].input)));
+		if (trainingset[index].output != sign(multiply(weight, trainingset[index].input)))
 		{//出错，执行修正算法
 		    //临时数组
 			double temp[demension];
@@ -89,7 +89,7 @@ void pocket_pla(vector<record> &trainingset,double *pocketweight,double *weight,
 				}
 			}
 			//步数
-			step++;
+			iter++;
 		}
 		if (index == n - 1)index = 0;
 		else index++;
