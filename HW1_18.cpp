@@ -116,6 +116,7 @@ int main()
 	}
 	for (int i = 0; i < 2000; i++)
 	{
+		random_shuffle(trainingset.begin(),trainingset.end());
 		for (int j = 0; j<demension; j++)
 		{
 			pocket_weight[j] = 0;
