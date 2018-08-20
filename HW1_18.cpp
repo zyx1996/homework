@@ -124,7 +124,7 @@ int main()
 		}
 		pocket_pla(trainingset,pocket_weight,weight,50);
 		double trainerror = geterrorRate(pocket_weight,trainingset);
-		double testerror = geterrorRate(pocket_weight, trainingset);
+		double testerror = geterrorRate(pocket_weight, testset);
 		avg_error+=testerror;
 		cout << "第" << i << "次实验---" << "training error:" << trainerror << " test error:" << testerror << endl;
 	}
