@@ -84,8 +84,8 @@ void pocket_pla(vector<record> &trainingset,double *pocketweight,double *weight,
 			//修正w(t+1)=w(t)+yx
 			add(weight, temp);
 			if(geterrorRate(weight,trainingset)<geterrorRate(pocketweight,trainingset)){
-				for(int i;i<denmension;i++){
-					pocket_weight[i]=weight[i];
+				for(int i;i<demension;i++){
+					pocketweight[i]=weight[i];
 				}
 			}
 			//步数
@@ -122,9 +122,9 @@ int main()
 			pocket_weight[j] = 0;
 			weight[j] = 0;
 		}
-		pocket_pla(trainingset,pocket_weight,weight,50);
-		double trainerror = geterrorRate(pocket_weight,trainingset);
-		double testerror = geterrorRate(pocket_weight, testset);
+		pocket_pla(trainingset,pocketweight,weight,50);
+		double trainerror = geterrorRate(pocketweight,trainingset);
+		double testerror = geterrorRate(pocketweight, testset);
 		avg_error+=testerror;
 		cout << "第" << i << "次实验---" << "training error:" << trainerror << " test error:" << testerror << endl;
 	}
